@@ -10,7 +10,8 @@ RUN apk update \
  && gzip -d shadowsocks-server-linux64-$SS_VERSION.gz \
  && mv shadowsocks-server-linux64-$SS_VERSION /usr/local/bin/shadowsocks-server \
  && chmod +x /usr/local/bin/shadowsocks-server \
- && apk del curl gzip
+ && apk del curl gzip \
+ && apk -v cache clean
 
 EXPOSE 8388
 
